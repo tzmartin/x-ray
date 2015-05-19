@@ -13,6 +13,7 @@
     "url": "git://github.com/lapwinglabs/x-ray.git"
   },
   "dependencies": {
+    "lodash" : "^3.7.0",
     "catch-stdout": "0.0.1",
     "cheerio": "^0.17.0",
     "debug": "^2.0.0",
