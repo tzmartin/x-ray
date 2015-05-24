@@ -2,6 +2,8 @@
 
 ## Introduction
 
+Note: This fork adds POST/PUT verbs to driver (based on Superagent).
+
 [![Join the chat at https://gitter.im/lapwinglabs/x-ray](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lapwinglabs/x-ray?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![img](https://gittask.com/lapwinglabs/x-ray.svg)](https://gittask.com/lapwinglabs/x-ray)
@@ -45,12 +47,21 @@ npm install x-ray
 
 ## API
 
-#### `Xray(url)`
+#### `Xray(url|object)`
 
-Initialize `xray` with a `url`
+Initialize `xray` with a `url` or an object
 
 ```js
 xray('http://google.com')
+
+xray({
+    url:'http://google.com',
+    method:'post',
+    data:{"foo":"bar"},
+    headers:{
+      "user-agent":"XRAY"
+    }
+})
 ```
 
 #### `Xray#select(<string|object|array> schema)`
