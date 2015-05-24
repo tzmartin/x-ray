@@ -11,7 +11,14 @@ Note: This fork adds POST/PUT verbs to driver (based on Superagent).
 ```js
 var xray = require('x-ray');
 
-xray('http://github.com/stars/matthewmueller')
+xray({
+    url:'http://github.com/stars/matthewmueller',
+    method:'post',
+    data:{"foo":"bar"},
+    headers:{
+      "user-agent":"XRAY"
+    }
+})
   .select([{
     $root: '.repo-list-item',
     title: '.repo-list-name',
